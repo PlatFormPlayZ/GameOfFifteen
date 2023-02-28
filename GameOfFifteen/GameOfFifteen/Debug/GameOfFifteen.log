@@ -1,0 +1,5 @@
+﻿  board.cpp
+  Source.cpp
+D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\Source.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  GameOfFifteen.vcxproj -> D:\GitHub\GameOfFifteen\GameOfFifteen\Debug\GameOfFifteen.exe
