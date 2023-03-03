@@ -20,12 +20,12 @@ void getInputLine(string* str);
 const bool debug = true;
 const bool deepDebug = false;
 const string boardInputFormat = "^\\([0-9],[0-9],[0-9],[0-9],[0-9],[0-9],[0-9],[0-9],[0-9]\\)$";
+const boardCell gameOverVar = std::make_pair('n', 0);
 
 int main()
 {
 	//game mechanic variables
 	bool gameRunning = true;
-
 
 	while (gameRunning)
 	{
@@ -34,8 +34,23 @@ int main()
 		{
 			break;
 		}
-
-		
+		board currentBoard = board();
+		//cout << userInput << endl;
+		currentBoard.setBoard(userInput);
+		board::player t = currentBoard.getTurn();
+		string turn = (t == board::player::Even) ? "Even" : "Odd";
+		cout << "Current Turn = " << turn << endl;
+		boardCell newCell = currentBoard.getRecommendedMove();
+		if (newCell.first == gameOverVar.first && newCell.second == gameOverVar.second)
+		{
+			cout << "Current Board Already Has a Winner = " << currentBoard.toString() << endl;
+		}
+		else
+		{
+			cout << "Recommended Move = (" << newCell.first << ", " << newCell.second << ")" << endl;
+			currentBoard.makeMove(newCell);
+			cout << "Current Board = " << currentBoard.toString() << endl;
+		}
 	}
 }
 
@@ -60,6 +75,7 @@ string getCurrentGameBoard(bool* gameRunning)
 			if (debug) { cout << "The supplied " << possibleBoard << "  board is in the correct format" << endl; }
 			stringTrim(&possibleBoard, { '(', ')'});
 			if (deepDebug) { cout << possibleBoard << endl; }
+			break;
 		}
 		else
 		{
