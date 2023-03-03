@@ -25,7 +25,7 @@ boardCell board::getRecommendedMove() {
 	std::vector<int> opt = getTurnOptions();
 	int cell = rand() % openCells.size();
 	int option = rand() % opt.size();
-	return std::make_pair(cells[cell].first, opt[option]);
+	return std::make_pair(openCells[cell].first, opt[option]);
 	/*
 	for (int i = 0; i < cellGroupings.size(); i++)
 	{
@@ -72,7 +72,7 @@ void board::makeMove(boardCell move)
 		int size = cells.size();
 		for (int i = 0; i < size; i++) 
 		{
-			if (cells[i].first == move.first)
+			if (cells[i].first == move.first && cells[i].second == 0)
 			{
 				cells[i].second = move.second;
 				removeOption(move.second);
@@ -81,7 +81,7 @@ void board::makeMove(boardCell move)
 			}
 		}
 	}
-	if (fail) { std::cout << "[board.cpp - makemove()] - failed to insert unexepcted... tried to insert on [" << move.first << " , " << move.second << "]" << std::endl; }
+	if (fail) { std::cout << "[board.cpp - makemove()] - tried to insert poorly... tried to insert on [" << move.first << " , " << move.second << "]" << std::endl; }
 }
 
 void board::setBoard(std::string data)
@@ -127,11 +127,17 @@ bool board::checkForWin()
 {
 	for (int i = 0; i < cellGroupings.size(); i++)
 	{
-		int groupingIndex1 = std::get<0>(cellGroupings[i]);
-		int groupingIndex2 = std::get<1>(cellGroupings[i]);
-		int groupingIndex3 = std::get<2>(cellGroupings[i]);
-		int sum = cells[groupingIndex1].second + cells[groupingIndex2].second + cells[groupingIndex3].second;
-		if (sum == 15) 
+		//get the cell index
+		int cell1 = std::get<0>(cellGroupings[i]);
+		int cell2 = std::get<1>(cellGroupings[i]);
+		int cell3 = std::get<2>(cellGroupings[i]);
+		//get the cell value
+		cell1 = cells[cell1].second;
+		cell2 = cells[cell2].second;
+		cell3 = cells[cell3].second;
+		//check the sum
+		int sum = cell1 + cell2 + cell3;
+		if (sum == 15 && (cell1 != 0 && cell2 != 0 && cell3 != 0))
 		{ 
 			return true; 
 		}

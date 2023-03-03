@@ -1,14 +1,11 @@
-﻿  Source.cpp
-D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\Source.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
-  board.cpp
+﻿  board.cpp
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(23,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(68,16): warning C4101: 'unsetPlayer': unreferenced local variable
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(93,21): warning C4018: '<': signed/unsigned mismatch
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
 D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
-D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(145,20): warning C4018: '<': signed/unsigned mismatch
-D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(166,20): warning C4018: '<': signed/unsigned mismatch
-D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(190,20): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(151,20): warning C4018: '<': signed/unsigned mismatch
+D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(172,20): warning C4018: '<': signed/unsigned mismatch
+D:\GitHub\GameOfFifteen\GameOfFifteen\GameOfFifteen\board.cpp(196,20): warning C4018: '<': signed/unsigned mismatch
   GameOfFifteen.vcxproj -> D:\GitHub\GameOfFifteen\GameOfFifteen\Debug\GameOfFifteen.exe
